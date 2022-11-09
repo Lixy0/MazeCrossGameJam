@@ -20,12 +20,13 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canMove == true)
-        {
+
             // player input
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
 
+        if (canMove == true)
+        {
             // move player
             transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
             transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
@@ -34,7 +35,7 @@ public class playerController : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollision(Collision collision)
     {
         if (collision.gameObject.tag == "Wall")
         {
