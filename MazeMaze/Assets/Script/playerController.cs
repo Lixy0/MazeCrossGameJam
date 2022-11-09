@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class playerController : MonoBehaviour
 {
@@ -10,7 +9,7 @@ public class playerController : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
 
-    public bool canMove = false;
+    public bool canMove = true;
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +30,11 @@ public class playerController : MonoBehaviour
             transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
             transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
         }
+
     }
 
 
-    private void OnCollisionEnter(Collision2D collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Wall")
         {
@@ -42,7 +42,7 @@ public class playerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision2D collision)
+    private void OnCollisionExit(Collision collision)
     {
         canMove = false;
     }
