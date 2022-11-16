@@ -354,8 +354,22 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
+"Assets/Script/interactionScript.cs"
+"Assets/Script/interactionWallScript.cs"
 "Assets/Script/movementTest.cs"
 "Assets/Script/playerController.cs"
+"Assets/Script/wallScript.cs"
+"Assets/Script/winScript.cs"
+"Assets/SwipeController/Scripts/DirectionId.cs"
+"Assets/SwipeController/Scripts/DirectionPresets.cs"
+"Assets/SwipeController/Scripts/Errors.cs"
+"Assets/SwipeController/Scripts/Examples/MoveOnSwipe_EightDirections.cs"
+"Assets/SwipeController/Scripts/Examples/MoveOnSwipe_Hexagonal.cs"
+"Assets/SwipeController/Scripts/Examples/MoveOnSwipe_Vector.cs"
+"Assets/SwipeController/Scripts/SwipeDetectionMode.cs"
+"Assets/SwipeController/Scripts/SwipeListener.cs"
+"Assets/SwipeController/Scripts/SwipesToVectorEvents.cs"
+"Assets/SwipeController/Scripts/VectorToDirection.cs"
 -langversion:9.0
 
 /deterministic

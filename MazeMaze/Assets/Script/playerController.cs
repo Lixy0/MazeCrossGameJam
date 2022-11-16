@@ -2,14 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
+using GG.Infrastructure.Utils.Swipe;
+
 
 public class playerController : MonoBehaviour
 {
-    public float speed = 5.0f;
-    private float horizontalInput;
-    private float verticalInput;
+    [SerializeField] private SwipeListener swipeListener;
+    [SerializeField] private Transform playerTransform;
+    [SerializeField] private float playerSpeed;
 
-    public bool canMove = true;
+    private Vector3 playerDirection = Vector3.zero;
+
+
+    private void OnEnable()
+    {
+        swipeListener.OnSwipe.AddListener(OnSwipe);
+    }
+
+    private void OnSwipe(string swipe)
+    {
+        Debug.Log(swipe);
+
+            switch (swipe)
+            {
+                case "Right":
+                    playerDirection = Vector3.right;
+                    break;
+
+                case "Left":
+                    playerDirection = Vector3.left;
+                    break;
+
+                case "Up":
+                    playerDirection = Vector3.up;
+
+                    break;
+
+                case "Down":
+                    playerDirection = Vector3.down;
+                    break;
+            }
+       
+
+
+    }
+
+    private void OnDisable()
+    {
+        swipeListener.OnSwipe.RemoveListener(OnSwipe);
+    }
+
+    //Slide WALL/PLAYER
+    //public bool canMove = true;
 
     // Start is called before the first frame update
     void Start()
@@ -20,31 +65,27 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (canMove)
+        //{
+            playerTransform.position += (Vector3)playerDirection * playerSpeed * Time.deltaTime;
 
-            // player input
-            horizontalInput = Input.GetAxis("Horizontal");
-            verticalInput = Input.GetAxis("Vertical");
+        //}
 
-        if (canMove == true)
-        {
-            // move player
-            transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
-            transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
-        }
 
     }
 
 
-    private void OnCollision(Collision collision)
-    {
-        if (collision.gameObject.tag == "Wall")
-        {
-            canMove = true;
-        }
-    }
 
-    private void OnCollisionExit(Collision collision)
-    {
-        canMove = false;
-    }
+    //private void OnCollision(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Wall")
+    //    {
+    //        canMove = true;
+    //    }
+    //}
+
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    canMove = false;
+    //}
 }
