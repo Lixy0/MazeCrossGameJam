@@ -58,20 +58,18 @@
   <ItemGroup>
     <Compile Include="Assets\Script\movementTest.cs" />
     <Compile Include="Assets\Script\playerController.cs" />
-    <Compile Include="Assets\Script\interactionScript.cs" />
-    <Compile Include="Assets\Script\winScript.cs" />
-    <Compile Include="Assets\SwipeController\Scripts\Examples\MoveOnSwipe_Hexagonal.cs" />
-    <Compile Include="Assets\SwipeController\Scripts\DirectionPresets.cs" />
-    <Compile Include="Assets\SwipeController\Scripts\SwipeListener.cs" />
-    <Compile Include="Assets\SwipeController\Scripts\Errors.cs" />
-    <Compile Include="Assets\SwipeController\Scripts\SwipesToVectorEvents.cs" />
-    <Compile Include="Assets\SwipeController\Scripts\DirectionId.cs" />
-    <Compile Include="Assets\SwipeController\Scripts\SwipeDetectionMode.cs" />
-    <Compile Include="Assets\SwipeController\Scripts\Examples\MoveOnSwipe_Vector.cs" />
-    <Compile Include="Assets\SwipeController\Scripts\VectorToDirection.cs" />
-    <Compile Include="Assets\SwipeController\Scripts\Examples\MoveOnSwipe_EightDirections.cs" />
-    <Compile Include="Assets\Script\interactionWallScript.cs" />
     <Compile Include="Assets\Script\wallScript.cs" />
+    <Compile Include="Assets\Script\SwipeController\Scripts\SwipeListener.cs" />
+    <Compile Include="Assets\Script\SwipeController\Scripts\SwipesToVectorEvents.cs" />
+    <Compile Include="Assets\Script\interactionScript.cs" />
+    <Compile Include="Assets\Script\SwipeController\Scripts\SwipeDetectionMode.cs" />
+    <Compile Include="Assets\Script\SwipeController\Scripts\Errors.cs" />
+    <Compile Include="Assets\Script\SwipeController\Scripts\DirectionId.cs" />
+    <Compile Include="Assets\Script\SwipeController\Scripts\VectorToDirection.cs" />
+    <Compile Include="Assets\Script\winScript.cs" />
+    <Compile Include="Assets\Script\interactionWallScript.cs" />
+    <Compile Include="Assets\Script\SwipeController\Scripts\DirectionPresets.cs" />
+    <Compile Include="Assets\Script\loadScenes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

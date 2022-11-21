@@ -12,14 +12,18 @@ public class playerController : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float playerSpeed;
 
+    [SerializeField] private bool canMove=true;
+
     private Vector3 playerDirection = Vector3.zero;
 
 
+    // -- Direction du joueur SWIPE (up;down;left;right)
     private void OnEnable()
     {
         swipeListener.OnSwipe.AddListener(OnSwipe);
     }
 
+    // up;down;left;right movement
     private void OnSwipe(string swipe)
     {
         Debug.Log(swipe);
@@ -53,39 +57,30 @@ public class playerController : MonoBehaviour
         swipeListener.OnSwipe.RemoveListener(OnSwipe);
     }
 
-    //Slide WALL/PLAYER
-    //public bool canMove = true;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        //if (canMove)
-        //{
+        if (canMove == true)
+        {
             playerTransform.position += (Vector3)playerDirection * playerSpeed * Time.deltaTime;
-
-        //}
-
+        }
 
     }
 
 
-
-    //private void OnCollision(Collision collision)
-    //{
-    //    if (collision.gameObject.tag == "Wall")
-    //    {
-    //        canMove = true;
-    //    }
-    //}
-
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    canMove = false;
-    //}
+    // --- Detection collision (PLAYER/WALL)
+    private void OnTriggerEnter(Collider collision)
+    {
+        // si collision avec tag "Wall" le player ne peut plus bouger
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            Debug.Log("player/wall ON");
+            canMove = false;
+        }
+    }
+    // En sortant de la collision, le player peut bouger
+    private void OnTriggerExit(Collider collision)
+    {
+        Debug.Log("player/wall OFF");
+        canMove = true;
+    }
 }
