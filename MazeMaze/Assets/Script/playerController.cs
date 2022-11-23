@@ -73,14 +73,28 @@ public class playerController : MonoBehaviour
         // si collision avec tag "Wall" le player ne peut plus bouger
         if (collision.gameObject.CompareTag("Wall"))
         {
+            StartCoroutine(Example());
             Debug.Log("player/wall ON");
-            canMove = false;
+            //canMove = false;
+
         }
     }
+
+
     // En sortant de la collision, le player peut bouger
     private void OnTriggerExit(Collider collision)
     {
+        canMove = false;
         Debug.Log("player/wall OFF");
-        canMove = true;
+
     }
+    IEnumerator Example()
+    {
+        Debug.Log("time start");
+        canMove = true;
+        yield return new WaitForSecondsRealtime(0.25f);
+        canMove = false;
+        Debug.Log("time done");
+    }
+
 }

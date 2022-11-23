@@ -1,0 +1,20 @@
+{
+"instructions_readme": "1) Open Chrome, 2) go to chrome://tracing, 3) click Load, 4) navigate to this file.",
+
+"traceEvents":[
+{ "pid": "Unity", "ph":"M", "name": "process_name", "args": {"name": "Unity"} },
+{ "pid": "Unity", "ph":"M", "name": "process_sort_index", "args": {"sort_index": -100} },
+{ "pid": "Unity", "tid": 1, "ph":"M", "name": "thread_name", "args": {"name": ""} },
+{ "pid": "Unity", "tid": 1,"ts": 1.66919743237313E+15,"dur": 17490886, "ph":"X", "name": "Build player"},
+{ "pid": "Unity", "tid": 1,"ts": 1.66919743243367E+15,"dur": 290902, "ph":"X", "name": "Preprocess Player"},
+{ "pid": "Unity", "tid": 1,"ts": 1.66919743273302E+15,"dur": 17021004, "ph":"X", "name": "Prepare For Build"},
+{}
+
+],
+"meta_datetime": "11/23/2022 10:57:29",
+"meta_command_line": "\"C:\\Program Files\\Unity\\Hub\\Editor\\2021.3.10f1\\Editor\\Unity.exe\" -projectpath C:\\Users\\GAME2\\Documents\\UNITY\\MazeCrossGameJam\\MazeMaze -useHub -hubIPC -cloudEnvironment production -licensingIpc LicenseClient-GAME2 -hubSessionId b1a31ac0-6afd-11ed-b560-cbe765fccc93 -accessToken vC5lGGd7wHg8bKR_nqQmxW2inbRNpbCFHhsuR3dNOP8008f",
+"meta_command_line_args": "C:\\Program Files\\Unity\\Hub\\Editor\\2021.3.10f1\\Editor\\Unity.exe -projectpath C:\\Users\\GAME2\\Documents\\UNITY\\MazeCrossGameJam\\MazeMaze -useHub -hubIPC -cloudEnvironment production -licensingIpc LicenseClient-GAME2 -hubSessionId b1a31ac0-6afd-11ed-b560-cbe765fccc93 -accessToken vC5lGGd7wHg8bKR_nqQmxW2inbRNpbCFHhsuR3dNOP8008f",
+"meta_user_name": "GAME2",
+"meta_os_version": "Microsoft Windows NT 10.0.22621.0",
+"meta_cpu_count": "16"
+}

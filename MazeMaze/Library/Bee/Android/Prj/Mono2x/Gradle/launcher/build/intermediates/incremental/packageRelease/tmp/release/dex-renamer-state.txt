@@ -1,0 +1,4 @@
+#Wed Nov 23 09:40:19 CET 2022
+base.0=C\:\\Users\\GAME2\\Documents\\UNITY\\MazeCrossGameJam\\MazeMaze\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
